@@ -56,7 +56,9 @@ div.clear button {
 .display {
     display: flex;
     justify-content: right;
+    align-items : center;
     width : 65% ;
+    height : 25px;
     padding : 10px;
     margin-bottom: 30px;
     background-color: #C6FAF6;

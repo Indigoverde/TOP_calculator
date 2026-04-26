@@ -20,22 +20,40 @@ const divide = function (a, b) {
 let num1;
 let operator;
 let num2;
+let result;
+let displayArr = [];
 
 function operate(operator, num1, num2) {
     if (operator === "+") {
-        return add(num1, num2);
+        result = add(num1, num2);
+        console.log(result);
+        displayArr.push(result)
+        console.log(displayArr)
+        updateDisplay(displayArr);
     } else if (operator === "-") {
-        return subtract(num1, num2);
+        result = subtract(num1, num2);
+        console.log(result);
+        displayArr.push(result)
+        console.log(displayArr)
+        updateDisplay(displayArr);
     } else if (operator === "*") {
-        return multiply(num1, num2);
+        result = multiply(num1, num2);
+        console.log(result);
+        displayArr.push(result)
+        console.log(displayArr)
+        updateDisplay(displayArr);
     } else if (operator === "/") {
-        return divide(num1, num2);
+        result =  divide(num1, num2);
+        console.log(result);
+        displayArr.push(result)
+        console.log(displayArr)
+        updateDisplay(displayArr);
     };
 }
 
-let displayArr = [];
 
-// Diplay update when clicking on numbers
+
+// Update display when clicking on numbers
 
 function updateDisplay(arr) {
     const displayDiv = document.querySelector(".display");
@@ -115,20 +133,70 @@ const clear = document.querySelector(".clear");
     clearDisplay(displayArr);
 });
 
-    
-/* let displayArr = [];
+// Activate the operate function
 
-// Diplay update when clicking on numbers
 
-function updateDisplay(arr) {
-    const displayDiv = document.querySelector(".display");
-    displayDiv.textContent = arr.join("");
+const sum = document.querySelector("#sum");
+sum.addEventListener("click", () => {
+    num1 = parseInt(displayArr.join(""));
+    console.log(typeof num1, num1);
+    operator = "+";
+    console.log(operator);
+    displayArr.length = 0;
+    clearDisplay(displayArr);
+    });
+
+const subtraction = document.querySelector("#subtraction");
+subtraction.addEventListener("click", () => {
+    num1 = parseInt(displayArr.join(""));
+    console.log(typeof num1, num1);
+    operator = "-";
+    console.log(operator);
+    displayArr.length = 0;
+    clearDisplay(displayArr);
+    });
+
+const multiplication = document.querySelector("#multiplication");
+multiplication.addEventListener("click", () => {
+    num1 = parseInt(displayArr.join(""));
+    console.log(typeof num1, num1);
+    operator = "*";
+    console.log(operator);
+    displayArr.length = 0;
+    clearDisplay(displayArr);
+    });
+
+const division = document.querySelector("#division");
+division.addEventListener("click", () => {
+    num1 = parseInt(displayArr.join(""));
+    console.log(typeof num1, num1);
+    operator = "/";
+    console.log(operator);
+    displayArr.length = 0;
+    clearDisplay(displayArr);
+    });
+
+const total = document.querySelector("#equal");
+total.addEventListener("click", () => {
+    num2 = parseInt(displayArr.join(""));
+    console.log(typeof num2, num2);
+    displayArr.length = 0;
+    clearDisplay(displayArr);
+    return operate(operator, num1, num2);
+});
+
+/* function sendToOperate() {
+    const operators = document.querySelectorAll("button.operator");
+
+
 }
+ */
 
-const zero = document.querySelector("#zero");
-    zero.addEventListener("click", () => {
-    displayArr.push(0);
-    updateDisplay(displayArr);
-}); */
-
-
+// quand clic sur un signe : stocker le nombre tapé avant
+// si clic sur un 2e opérateur
+    // stocker le dernier nombre dans une 2e variable
+    // envoyer vers la fonction opérate et stocker le résultat dans la première variable
+// quand clic sur égal : 
+    // stocker dernier nombre rentré dans une 2 variable
+    // Envoyer les deux nombres et 
+    
