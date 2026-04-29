@@ -17,40 +17,41 @@ const divide = function (a, b) {
 };
 
 
-let num1;
+let num1 = null;
 let operator;
 let num2;
 let result;
 let displayArr = [];
 
-function operate(operator, num1, num2) {
+function operateEqual(operator, nb1, nb2) {
     if (operator === "+") {
-        result = add(num1, num2);
+        result = add(nb1, nb2);
         console.log(result);
         displayArr.push(result)
         console.log(displayArr)
         updateDisplay(displayArr);
+        num1 = null;
+        
     } else if (operator === "-") {
-        result = subtract(num1, num2);
+        result = subtract(nb1, nb2);
         console.log(result);
         displayArr.push(result)
         console.log(displayArr)
         updateDisplay(displayArr);
     } else if (operator === "*") {
-        result = multiply(num1, num2);
+        result = multiply(nb1, nb2);
         console.log(result);
         displayArr.push(result)
         console.log(displayArr)
         updateDisplay(displayArr);
     } else if (operator === "/") {
-        result =  divide(num1, num2);
+        result =  divide(nb1, nb2);
         console.log(result);
         displayArr.push(result)
         console.log(displayArr)
         updateDisplay(displayArr);
     };
 }
-
 
 
 // Update display when clicking on numbers
@@ -125,12 +126,15 @@ nine.addEventListener("click", () => {
 function clearDisplay(arr) {
     const displayClear = document.querySelector(".display");
     displayClear.textContent = arr;
-   }; 
+}; 
 
 const clear = document.querySelector(".clear");
-    clear.addEventListener("click", () => {
+clear.addEventListener("click", () => {
     displayArr.length = 0;
     clearDisplay(displayArr);
+    num1 = null;
+    num2 = null;
+    result = null;
 });
 
 // Activate the operate function
@@ -138,13 +142,24 @@ const clear = document.querySelector(".clear");
 
 const sum = document.querySelector("#sum");
 sum.addEventListener("click", () => {
-    num1 = parseInt(displayArr.join(""));
-    console.log(typeof num1, num1);
-    operator = "+";
-    console.log(operator);
-    displayArr.length = 0;
-    clearDisplay(displayArr);
-    });
+    if (num1 === null) {
+        num1 = parseInt(displayArr.join(""));
+        console.log(typeof num1, num1);
+        operator = "+";
+        console.log(operator);
+        displayArr.length = 0;
+        clearDisplay(displayArr);
+ 
+    } else {
+        num2 = parseInt(displayArr.join(""));
+        console.log(typeof num2, num2);
+        result = num1 + num2;
+        num1 = result;
+        console.log(result);
+        displayArr.length = 0;
+        clearDisplay(displayArr);
+    };
+});
 
 const subtraction = document.querySelector("#subtraction");
 subtraction.addEventListener("click", () => {
@@ -182,21 +197,5 @@ total.addEventListener("click", () => {
     console.log(typeof num2, num2);
     displayArr.length = 0;
     clearDisplay(displayArr);
-    return operate(operator, num1, num2);
+    return operateEqual(operator, num1, num2);
 });
-
-/* function sendToOperate() {
-    const operators = document.querySelectorAll("button.operator");
-
-
-}
- */
-
-// quand clic sur un signe : stocker le nombre tapé avant
-// si clic sur un 2e opérateur
-    // stocker le dernier nombre dans une 2e variable
-    // envoyer vers la fonction opérate et stocker le résultat dans la première variable
-// quand clic sur égal : 
-    // stocker dernier nombre rentré dans une 2 variable
-    // Envoyer les deux nombres et 
-    
