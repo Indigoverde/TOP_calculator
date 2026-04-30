@@ -31,27 +31,62 @@ function operateEqual(operator, nb1, nb2) {
         console.log(displayArr)
         updateDisplay(displayArr);
         num1 = null;
-        
     } else if (operator === "-") {
         result = subtract(nb1, nb2);
         console.log(result);
         displayArr.push(result)
         console.log(displayArr)
         updateDisplay(displayArr);
+        num1 = null;
     } else if (operator === "*") {
         result = multiply(nb1, nb2);
         console.log(result);
         displayArr.push(result)
         console.log(displayArr)
         updateDisplay(displayArr);
+        num1 = null;
     } else if (operator === "/") {
         result =  divide(nb1, nb2);
         console.log(result);
         displayArr.push(result)
         console.log(displayArr)
         updateDisplay(displayArr);
+        num1 = null;
     };
 }
+
+function calculateOperator(operator, nb1, nb2) {
+   if (operator === "+") {
+        result = add(nb1, nb2);
+        console.log(result);
+        displayArr.length = 0;
+        displayArr.push(result)
+        console.log(displayArr)
+        updateDisplay(displayArr);
+        } else if (operator === "-") {
+        result = subtract(nb1, nb2);
+        console.log(result);
+        displayArr.length = 0;
+        displayArr.push(result)
+        console.log(displayArr)
+        updateDisplay(displayArr);
+    } else if (operator === "*") {
+        result = multiply(nb1, nb2);
+        console.log(result);
+        displayArr.length = 0;
+        displayArr.push(result)
+        console.log(displayArr)
+        updateDisplay(displayArr);
+    } else if (operator === "/") {
+        result =  divide(nb1, nb2);
+        console.log(result);
+        displayArr.length = 0;
+        displayArr.push(result)
+        console.log(displayArr)
+        updateDisplay(displayArr);
+    };
+}
+
 
 
 // Update display when clicking on numbers
@@ -153,42 +188,79 @@ sum.addEventListener("click", () => {
     } else {
         num2 = parseInt(displayArr.join(""));
         console.log(typeof num2, num2);
-        result = num1 + num2;
-        num1 = result;
+        calculateOperator(operator, num1, num2);
         console.log(result);
+        num1 = result;
         displayArr.length = 0;
-        clearDisplay(displayArr);
+        //clearDisplay(displayArr);
+        operator = "+";
     };
 });
 
 const subtraction = document.querySelector("#subtraction");
 subtraction.addEventListener("click", () => {
+    if (num1 === null) {
     num1 = parseInt(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "-";
     console.log(operator);
     displayArr.length = 0;
     clearDisplay(displayArr);
+
+    } else {
+        num2 = parseInt(displayArr.join(""));
+        console.log(typeof num2, num2);
+        calculateOperator(operator, num1, num2);
+        console.log(result);
+        num1 = result;
+        displayArr.length = 0;
+        //clearDisplay(displayArr);
+        operator = "-"
+    }
     });
 
 const multiplication = document.querySelector("#multiplication");
 multiplication.addEventListener("click", () => {
+    if (num1 === null) {
     num1 = parseInt(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "*";
     console.log(operator);
     displayArr.length = 0;
     clearDisplay(displayArr);
+
+    } else {
+      num2 = parseInt(displayArr.join(""));
+        console.log(typeof num2, num2);
+        calculateOperator(operator, num1, num2);
+        console.log(result);
+        num1 = result;
+        displayArr.length = 0;
+        //clearDisplay(displayArr);  
+        operator = "*";
+    }
     });
 
 const division = document.querySelector("#division");
 division.addEventListener("click", () => {
+    if (num1 === null) {
     num1 = parseInt(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "/";
     console.log(operator);
     displayArr.length = 0;
     clearDisplay(displayArr);
+
+    } else {
+        num2 = parseInt(displayArr.join(""));
+        console.log(typeof num2, num2);
+        calculateOperator(operator, num1, num2);
+        console.log(result);
+        num1 = result;
+        displayArr.length = 0;
+        //clearDisplay(displayArr);
+        operator = "/";
+    }
     });
 
 const total = document.querySelector("#equal");
