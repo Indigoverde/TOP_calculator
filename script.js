@@ -34,8 +34,8 @@ function operateEqual(operator, nb1, nb2) {
         displayArr.push(roundedResult);
         console.log(displayArr);
         updateDisplay(displayArr);
-        num1 = null;
-    } else if (operator === "-") {
+        num1 = null; 
+        } else if (operator === "-") {
         result = subtract(nb1, nb2);
         console.log(result);
         roundedResult = Math.round(result * 10000000000) / 10000000000;
@@ -71,7 +71,8 @@ function operateEqual(operator, nb1, nb2) {
             num1 = null;
             num2 = null;
             result = null;
-            roundedResult = null;           
+            roundedResult = null; 
+            operatorArr = null;          
         }
     };
 }
@@ -129,63 +130,183 @@ function updateDisplay(arr) {
 
 const zero = document.querySelector("#zero");
     zero.addEventListener("click", () => {
-    displayArr.push(0);
-    updateDisplay(displayArr);
-});
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0; // ?
+        displayArr.push(0);
+        updateDisplay(displayArr);
+    } else {
+            operatorArr.length = 0;    // ?
+            displayArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(0);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 const one = document.querySelector("#one");
 one.addEventListener("click", () => {
-    displayArr.push(1);
-    updateDisplay(displayArr);
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(1);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(1);
+            updateDisplay(displayArr);
+    }
 }) ;
 
 const two = document.querySelector("#two");
 two.addEventListener("click", () => {
-    displayArr.push(2);
-    updateDisplay(displayArr);
-});
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(2);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(2);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 const three = document.querySelector("#three");
 three.addEventListener("click", () => {
-    displayArr.push(3);
-    updateDisplay(displayArr);
-});
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(3);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(3);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 const four = document.querySelector("#four");
 four.addEventListener("click", () => {
-    displayArr.push(4);
-    updateDisplay(displayArr);
-});
+ if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(4);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(4);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 const five = document.querySelector("#five");
 five.addEventListener("click", () => {
-    displayArr.push(5);
-    updateDisplay(displayArr);
-});
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(5);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(5);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 const six = document.querySelector("#six");
 six.addEventListener("click", () => {
-    displayArr.push(6);
-    updateDisplay(displayArr);
-});
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(6);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(6);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 const seven = document.querySelector("#seven");
 seven.addEventListener("click", () => {
-    displayArr.push(7);
-    updateDisplay(displayArr);
-});
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(7);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(7);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 const eight = document.querySelector("#eight");
 eight.addEventListener("click", () => {
-    displayArr.push(8);
-    updateDisplay(displayArr);
-});
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(8);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(8);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 const nine = document.querySelector("#nine");
 nine.addEventListener("click", () => {
-    displayArr.push(9);
-    updateDisplay(displayArr);
-});
+    if (displayArr.indexOf(roundedResult) == -1) {
+        operatorArr.length = 0;
+        displayArr.push(9);
+        updateDisplay(displayArr);
+    } else {    
+            displayArr.length = 0;
+            operatorArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push(9);
+            updateDisplay(displayArr);
+    }
+}) ;
 
 // Clear display
 
@@ -202,6 +323,7 @@ clear.addEventListener("click", () => {
     num2 = null;
     result = null;
     roundedResult = null;
+    operatorArr.length = 0;
 });
 
 // Activate the operate function
@@ -210,11 +332,10 @@ clear.addEventListener("click", () => {
 const sum = document.querySelector("#sum");
 sum.addEventListener("click", () => {
     if (num1 === null) {
-        if (operatorArr.indexOf("+")== -1) {
+        if (operatorArr.indexOf("+") == -1) {
             num1 = parseFloat(displayArr.join(""));
             console.log(typeof num1, num1);
             operator = "+";
-            operatorArr.length = 0;
             operatorArr = ["+"];
             console.log(operator);
             displayArr.length = 0;
@@ -233,7 +354,6 @@ sum.addEventListener("click", () => {
         //clearDisplay(displayArr);
         displayArr.length = 0;
         operator = "+";
-        operatorArr.length = 0;
         operatorArr = ["+"];
         } else {
             console.log("error : successive clicks on operator")
@@ -247,7 +367,6 @@ subtraction.addEventListener("click", () => {
     num1 = parseFloat(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "-";
-    operatorArr.length = 0;
     operatorArr = ["-"];
     console.log(operator);
     displayArr.length = 0;
@@ -263,7 +382,6 @@ subtraction.addEventListener("click", () => {
         displayArr.length = 0;
         //clearDisplay(displayArr);
         operator = "-";
-        operatorArr.length = 0;
         operatorArr = ["-"];
     } else {
             console.log("error : successive clicks on operator")
@@ -278,7 +396,6 @@ multiplication.addEventListener("click", () => {
     num1 = parseFloat(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "*";
-    operatorArr.length = 0;
     operatorArr = ["*"];
     console.log(operator);
     displayArr.length = 0;
@@ -294,7 +411,6 @@ multiplication.addEventListener("click", () => {
         displayArr.length = 0;
         //clearDisplay(displayArr);  
         operator = "*";
-        operatorArr.length = 0;
         operatorArr = ["*"];
     } else {
             console.log("error : successive clicks on operator")
@@ -308,7 +424,6 @@ division.addEventListener("click", () => {
     num1 = parseFloat(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "/";
-    operatorArr.length = 0;
     operatorArr = ["/"];
     console.log(operator);
     displayArr.length = 0;
@@ -324,7 +439,6 @@ division.addEventListener("click", () => {
         displayArr.length = 0;
         //clearDisplay(displayArr);
         operator = "/";
-        operatorArr.length = 0;
         operatorArr = ["/"];
      } else {
             console.log("error : successive clicks on operator")
@@ -334,7 +448,8 @@ division.addEventListener("click", () => {
 
 const total = document.querySelector("#equal");
 total.addEventListener("click", () => {
-    if (displayArr.length >= 1) {
+    if (displayArr.length >= 1 && num1 !== null) {
+    if (operatorArr.indexOf("=") == -1)
     num2 = parseFloat(displayArr.join(""));
     console.log(typeof num2, num2);
     displayArr.length = 0;
