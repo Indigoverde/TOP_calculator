@@ -53,6 +53,7 @@ function operateEqual(operator, nb1, nb2) {
         updateDisplay(displayArr);
         num1 = null;
     } else if (operator === "/") {
+        if (num2 !== 0 ){
         result =  divide(nb1, nb2);
         console.log(result);
         roundedResult = Math.round(result * 10000000000) / 10000000000;
@@ -61,6 +62,16 @@ function operateEqual(operator, nb1, nb2) {
         console.log(displayArr);
         updateDisplay(displayArr);
         num1 = null;
+        } else {
+            displayArr.length = 0;
+            displayArr.push("Error !");
+            updateDisplay(displayArr);
+            displayArr.length = 0;
+            num1 = null;
+            num2 = null;
+            result = null;
+            roundedResult = null;           
+        }
     };
 }
 
@@ -87,15 +98,25 @@ function calculateOperator(operator, nb1, nb2) {
         console.log(displayArr)
         updateDisplay(displayArr);
     } else if (operator === "/") {
+        if (num2 !== 0 ){
         result =  divide(nb1, nb2);
         console.log(result);
         displayArr.length = 0;
         displayArr.push(result)
         console.log(displayArr)
         updateDisplay(displayArr);
+        } else {
+            displayArr.length = 0;
+            displayArr.push("Error !");
+            updateDisplay(displayArr);
+            displayArr.length = 0;
+            num1 = null;
+            num2 = null;
+            result = null;
+            roundedResult = null;           
+        }
     };
 }
-
 
 
 // Update display when clicking on numbers
@@ -179,6 +200,7 @@ clear.addEventListener("click", () => {
     num1 = null;
     num2 = null;
     result = null;
+    roundedResult = null;
 });
 
 // Activate the operate function
@@ -192,7 +214,7 @@ sum.addEventListener("click", () => {
         operator = "+";
         console.log(operator);
         displayArr.length = 0;
-        clearDisplay(displayArr);
+        //clearDisplay(displayArr);
  
     } else {
         num2 = parseFloat(displayArr.join(""));
@@ -214,7 +236,7 @@ subtraction.addEventListener("click", () => {
     operator = "-";
     console.log(operator);
     displayArr.length = 0;
-    clearDisplay(displayArr);
+    //clearDisplay(displayArr);
 
     } else {
         num2 = parseFloat(displayArr.join(""));
@@ -236,7 +258,7 @@ multiplication.addEventListener("click", () => {
     operator = "*";
     console.log(operator);
     displayArr.length = 0;
-    clearDisplay(displayArr);
+    //clearDisplay(displayArr);
 
     } else {
       num2 = parseFloat(displayArr.join(""));
@@ -258,7 +280,7 @@ division.addEventListener("click", () => {
     operator = "/";
     console.log(operator);
     displayArr.length = 0;
-    clearDisplay(displayArr);
+    //clearDisplay(displayArr);
 
     } else {
         num2 = parseFloat(displayArr.join(""));
