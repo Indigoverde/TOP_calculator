@@ -274,9 +274,11 @@ division.addEventListener("click", () => {
 
 const total = document.querySelector("#equal");
 total.addEventListener("click", () => {
+    if (displayArr.length >= 1) {
     num2 = parseFloat(displayArr.join(""));
     console.log(typeof num2, num2);
     displayArr.length = 0;
     clearDisplay(displayArr);
     return operateEqual(operator, num1, num2);
+    }
 });
