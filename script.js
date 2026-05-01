@@ -23,6 +23,7 @@ let num2;
 let result;
 let roundedResult;
 let displayArr = [];
+let operatorArr = [];
 
 function operateEqual(operator, nb1, nb2) {
     if (operator === "+") {
@@ -209,22 +210,34 @@ clear.addEventListener("click", () => {
 const sum = document.querySelector("#sum");
 sum.addEventListener("click", () => {
     if (num1 === null) {
-        num1 = parseFloat(displayArr.join(""));
-        console.log(typeof num1, num1);
-        operator = "+";
-        console.log(operator);
-        displayArr.length = 0;
-        //clearDisplay(displayArr);
+        if (operatorArr.indexOf("+")== -1) {
+            num1 = parseFloat(displayArr.join(""));
+            console.log(typeof num1, num1);
+            operator = "+";
+            operatorArr.length = 0;
+            operatorArr = ["+"];
+            console.log(operator);
+            displayArr.length = 0;
+            //clearDisplay(displayArr);
+        } else {
+            console.log("error : successive clicks on operator")
+        };
  
     } else {
+        if (operatorArr.indexOf("+")== -1) {
         num2 = parseFloat(displayArr.join(""));
         console.log(typeof num2, num2);
         calculateOperator(operator, num1, num2);
         console.log(result);
         num1 = result;
-        displayArr.length = 0;
         //clearDisplay(displayArr);
+        displayArr.length = 0;
         operator = "+";
+        operatorArr.length = 0;
+        operatorArr = ["+"];
+        } else {
+            console.log("error : successive clicks on operator")
+        };
     };
 });
 
@@ -234,11 +247,14 @@ subtraction.addEventListener("click", () => {
     num1 = parseFloat(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "-";
+    operatorArr.length = 0;
+    operatorArr = ["-"];
     console.log(operator);
     displayArr.length = 0;
     //clearDisplay(displayArr);
 
     } else {
+        if (operatorArr.indexOf("-")== -1) {
         num2 = parseFloat(displayArr.join(""));
         console.log(typeof num2, num2);
         calculateOperator(operator, num1, num2);
@@ -246,9 +262,15 @@ subtraction.addEventListener("click", () => {
         num1 = result;
         displayArr.length = 0;
         //clearDisplay(displayArr);
-        operator = "-"
-    }
+        operator = "-";
+        operatorArr.length = 0;
+        operatorArr = ["-"];
+    } else {
+            console.log("error : successive clicks on operator")
+        };
+    };
     });
+
 
 const multiplication = document.querySelector("#multiplication");
 multiplication.addEventListener("click", () => {
@@ -256,12 +278,15 @@ multiplication.addEventListener("click", () => {
     num1 = parseFloat(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "*";
+    operatorArr.length = 0;
+    operatorArr = ["*"];
     console.log(operator);
     displayArr.length = 0;
     //clearDisplay(displayArr);
 
     } else {
-      num2 = parseFloat(displayArr.join(""));
+        if (operatorArr.indexOf("*")== -1) {
+        num2 = parseFloat(displayArr.join(""));
         console.log(typeof num2, num2);
         calculateOperator(operator, num1, num2);
         console.log(result);
@@ -269,7 +294,12 @@ multiplication.addEventListener("click", () => {
         displayArr.length = 0;
         //clearDisplay(displayArr);  
         operator = "*";
-    }
+        operatorArr.length = 0;
+        operatorArr = ["*"];
+    } else {
+            console.log("error : successive clicks on operator")
+        };
+    };
     });
 
 const division = document.querySelector("#division");
@@ -278,11 +308,14 @@ division.addEventListener("click", () => {
     num1 = parseFloat(displayArr.join(""));
     console.log(typeof num1, num1);
     operator = "/";
+    operatorArr.length = 0;
+    operatorArr = ["/"];
     console.log(operator);
     displayArr.length = 0;
     //clearDisplay(displayArr);
 
     } else {
+        if (operatorArr.indexOf("/")== -1) {
         num2 = parseFloat(displayArr.join(""));
         console.log(typeof num2, num2);
         calculateOperator(operator, num1, num2);
@@ -291,7 +324,12 @@ division.addEventListener("click", () => {
         displayArr.length = 0;
         //clearDisplay(displayArr);
         operator = "/";
-    }
+        operatorArr.length = 0;
+        operatorArr = ["/"];
+     } else {
+            console.log("error : successive clicks on operator")
+        };
+    };
     });
 
 const total = document.querySelector("#equal");
