@@ -72,7 +72,7 @@ function operateEqual(operator, nb1, nb2) {
             num2 = null;
             result = null;
             roundedResult = null; 
-            operatorArr = null;          
+            operatorArr = [];          
         }
     };
 }
