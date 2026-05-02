@@ -48,6 +48,10 @@ div.clear button {
     font-size: 1em;
 }
 
+div.clear button:hover {
+    background-color: #f6e1cc;
+}
+
 .display-container {
     display: flex;
     justify-content: center;
@@ -98,20 +102,36 @@ background-color: #77ede1;
     border : 5px solid #369E94;  
 }
 
+button.nbr:hover {
+    background-color:#d3fbf7
+}
+
 button.dot {
-background-color: #C6FAF6;
+background-color: #77ede1;
     color : #282349;
-    border : 5px solid #369E94;  
+    border : 5px solid #369E94
+}
+
+button.dot:hover {
+    background-color:#d3fbf7;
 }
 
 button.red {
-background-color: #f08066;
+background-color: #e58974;
     color : #282349;
-    border : 5px solid #d34431;  
+    border : 5px solid #cf5544;  
+}
+
+button.red:hover {
+    background-color:#f0c3b9;
 }
 
 button.yellow {
 background-color: #f8d98b;
     color : #282349;
     border : 5px solid #E8A302;  
+}
+
+button.yellow:hover {
+    background-color: #fcf0d0;
 }
