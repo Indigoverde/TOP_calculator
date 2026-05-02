@@ -128,8 +128,36 @@ function updateDisplay(arr) {
     displayDiv.textContent = arr.join("");
 }
 
+// Numbers and decimal
+
+const dot = document.querySelector("#decimal");
+dot.addEventListener("click", () => {
+    if (displayArr.indexOf(roundedResult) == -1) {
+        if (displayArr.indexOf(".") == -1) {
+            operatorArr.length = 0;
+            displayArr.push(".");
+            if (displayArr = ["."]) {
+                displayArr.unshift("0");
+            };
+            updateDisplay(displayArr);
+        } else {
+            displayArr.push(".");
+            updateDisplay(displayArr);
+        }
+    } else {
+            operatorArr.length = 0;    // ?
+            displayArr.length = 0;
+            updateDisplay(displayArr);
+            num2 = null;
+            result = null;
+            roundedResult = null;
+            displayArr.push("0.");
+            updateDisplay(displayArr);
+    }
+});
+
 const zero = document.querySelector("#zero");
-    zero.addEventListener("click", () => {
+zero.addEventListener("click", () => {
     if (displayArr.indexOf(roundedResult) == -1) {
         operatorArr.length = 0; // ?
         displayArr.push(0);
