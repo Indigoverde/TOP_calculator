@@ -136,25 +136,37 @@ dot.addEventListener("click", () => {
         if (displayArr.indexOf(".") == -1) {
             operatorArr.length = 0;
             displayArr.push(".");
-            if (displayArr = ["."]) {
+            console.log(displayArr);
+            let firstItem = displayArr[0];
+            console.log(firstItem);
+            if (firstItem === ".") {
                 displayArr.unshift("0");
             };
             updateDisplay(displayArr);
-        } else {
-            displayArr.push(".");
-            updateDisplay(displayArr);
-        }
+        }; 
     } else {
-            operatorArr.length = 0;    // ?
-            displayArr.length = 0;
-            updateDisplay(displayArr);
-            num2 = null;
-            result = null;
-            roundedResult = null;
-            displayArr.push("0.");
-            updateDisplay(displayArr);
-    }
-});
+        operatorArr.length = 0;  
+        displayArr.length = 0;
+        console.log(displayArr);
+        updateDisplay(displayArr);
+        num2 = null;
+        result = null;
+        roundedResult = null;
+        /* displayArr.push("0.");
+        updateDisplay(displayArr); */
+        if (displayArr.indexOf(".") == -1) {
+            operatorArr.length = 0;
+            displayArr.push(".");
+            console.log(displayArr);
+            displayArr.unshift("0");
+            console.log(displayArr);
+            };
+        updateDisplay(displayArr);
+        }
+    });
+
+
+
 
 const zero = document.querySelector("#zero");
 zero.addEventListener("click", () => {
